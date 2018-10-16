@@ -5,26 +5,28 @@ class Rocket
     @flying = options[:flying] || false
   end
 
+  # Attribute accessors for @name
   def name
     @name
   end
-
   def name=(new_name)
     @name = new_name
   end
 
+  # Attribute accessors for @colour
   def colour
     @colour
   end
-
   def colour=(new_colour)
     @colour = new_colour
   end
 
+  # Attribute reader for @flying
   def flying?
     @flying
   end
 
+  # Flying/landing methods
   def lift_off
     if flying?
       return false
@@ -33,7 +35,6 @@ class Rocket
       return true
     end
   end
-
   def land
     if flying?
       @flying = false
@@ -42,7 +43,6 @@ class Rocket
       return false
     end
   end
-
   def status
     if flying?
       return "Rocket #{name} is flying through the sky!"
